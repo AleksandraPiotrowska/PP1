@@ -111,9 +111,86 @@ main{
     padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2, #cover-text>h3 {
     color: #ffffff;
 }
+
+/*Reason content*/
+#reasons {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#reasons h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 280%;
+}
+
+#benefits-physical>div, #benefits-mental>div {
+ line-height: 20px;
+ margin-bottom: 20px;
+}
+
+ p {
+    padding: o 20px;
+}
+
+  hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+}
+
+#circle-cover-bg {
+    background: url('../images/reasons-image.webp') no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin-bottom: 20px;
+    /*Make the square picture into a circle*/
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Meetup times section*/
+#times {
+    background: url('../images/dublin-city.webp') no-repeat center / cover;
+    /*Handless responsivity without the need for a media querry*/
+    display: flex;
+    flex-wrap: wrap;
+}
+#times div {
+    color: #fafafa;
+    background-color: rgba(0,0,0,.6);
+    padding: 15px;
+    text-align: center;
+    /*This will not wrap on screens of less than 400px wide.
+    Each div will expand to fill the available space on its row*/
+    flex-basis: 200px;
+    flex-grow: 1;
+    /*Creates a grid of meetup time divs over the background image*/
+    border: 2px solid white;
+}
+
+#times h3 {
+    /*Override the heading color set in general styles*/
+    color: #fafafa;
+}
+
+/*Gallery page*/
+#photos img {
+    width: 100%;
+    line-height: 1em;
+}
+#photos {
+    line-height: 0;
+}
+
 /*Footer*/
 #social-networks {
     text-align: center;
@@ -128,6 +205,14 @@ main{
     color: #3a3a3a;
 }
 
+/*Media query: tablets or landscape phones( 576px and up)*/
+@media screen and (min-width: 576px) {
+    #photos {
+        column-count: 2;
+        column-gap: 0;
+    }
+}
+
 /*Media query: tablets and larger( 768px and up)*/
 @media screen and (min-width: 768px) {
     /*Header*/
@@ -138,6 +223,11 @@ main{
         width: fit-content;
         padding-right: 1rem;
     }
+    /*Gallery*/
+#photos {
+    column-count: 3;
+
+}
 }
     #menu {
         display: flex;
@@ -162,81 +252,9 @@ main{
         /*Push main content down to accomodate larger header*/
         margin-top: 79px; 
     }
-    /*Reason content*/
-    #reasons {
-        width: 90%;
-        margin: 20px auto;
-    }
-
-    #reasons h2 {
-        margin-bottom: 20px;
-        text-align: center;
-        font-size: 280%;
-    }
-
-    #benefits-physical>div, #benefits-mental>div {
-     line-height: 20px;
-     margin-bottom: 20px;
-    }
-
-     p {
-        padding: o 20px;
-    }
-
-      hr {
-        border-top: 1px solid #3a3a3a;
-        margin: 5px 0;
-    }
-
-    #circle-cover-bg {
-        background: url('../images/reasons-image.webp') no-repeat top center / cover;
-        height: 90vw;
-        width: 90vw;
-        margin-bottom: 20px;
-        /*Make the square picture into a circle*/
-        border-radius: 50%;
-        max-width: 300px;
-        max-height: 300px;
-    }
-    #benefits-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /*Meetup times section*/
-    #times {
-        background: url('../images/dublin-city.webp') no-repeat center / cover;
-        /*Handless responsivity without the need for a media querry*/
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #times div {
-        color: #fafafa;
-        background-color: rgba(0,0,0,.6);
-        padding: 15px;
-        text-align: center;
-        /*This will not wrap on screens of less than 400px wide.
-        Each div will expand to fill the available space on its row*/
-        flex-basis: 200px;
-        flex-grow: 1;
-        /*Creates a grid of meetup time divs over the background image*/
-        border: 2px solid white;
-    }
-
-    #times h3 {
-        /*Override the heading color set in general styles*/
-        color: #fafafa;
-    }
-
-    /*Gallery page*/
-    #photos img {
-        width: 100%;
-        line-height: 1em;
-    }
-    #photos {
-        line-height: 0;
-    }
+    
+    
+    
 
     /*Hero*/
     #cover-text {
@@ -262,12 +280,22 @@ main{
         align-self: flex-end;
     
 }
+
+
+
 /*Large devices (laptops and desctops 992 px and up*/
 @media screen and (min-width: 992px) {
     #menu a:hover{
         border-bottom: 1px solid #3a3a3a;
-    }  
+    }
+    /*Gallery*/
+#photos {
+    column-count: 4;
+}  
 }
+
+
+
 @media screen and (min-width: 1200px) {
     /*Reasons Section*/
     #benefits {
